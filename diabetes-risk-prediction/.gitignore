@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Jupyter runtime
+*.local/share/jupyter/runtime/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VSCode settings (if using VSCode)
+.vscode/
+
+# Python virtual environment metadata
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+
+# Project outputs
+*.log
+*.out
+*.bak
+
+# Generated images or model files (if not needed)
+images/
+models/
