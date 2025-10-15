@@ -46,14 +46,6 @@ Run the notebook:
 jupyter notebook notebooks/diabetes_risk_prediction.ipynb
 ```
 
-## 📊 Dataset Overview
-
-- **Source**: [dataset](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
-- **Size**: 768 rows × 8 clinical features
-- **Target**: `Outcome` (1 = diabetic, 0 = non-diabetic)
-- **Note**: Some features (e.g., `Glucose`, `Insulin`) contain biologically implausible zeros, handled as missing values.
-
-
 ## 📬 Contact Me
 
 Hyeri Kim | 📧 [Email](mailto:hyeri5524@gmail.com) | 🌐 [LinkedIn](https://linkedin.com/in/hyerikim-ds)   
