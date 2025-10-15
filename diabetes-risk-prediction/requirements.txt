@@ -1,10 +1,21 @@
 # Core packages for reproducing the diabetes risk prediction notebook
 # Minimal dependencies only – environment-agnostic
 
-pandas==2.1.4
+# Core scientific computing
+pandas==2.2.2
 numpy==1.26.4
-matplotlib==3.7.1
-seaborn==0.12.2
+
+# Machine learning and model evaluation
 scikit-learn==1.2.2
 imbalanced-learn==0.10.1
-shap==0.47.2
+
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+
+# Model explainability
+shap==0.46.0
+
+# Utility and notebook support
+ipython==8.26.0
+jupyter==1.1.1
