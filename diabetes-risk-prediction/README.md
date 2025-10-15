@@ -1,100 +1,58 @@
 # 🩺 Diabetes Risk Prediction
 
-This project demonstrates a complete machine learning pipeline to identify individuals at risk of diabetes using the **Pima Indians Diabetes dataset**. It was designed with real-world screening applications in mind—prioritizing **high recall**, **clinical interpretability**, and **model transparency** to support early diagnosis.
+## 🏷 Project Overview
+This project predicts diabetes risk using clinical data to support early screening decisions. It reflects my growth from data analyst to data scientist — integrating model development, tuning, and explainability to extract meaningful healthcare insights.
 
----
+**Dataset**: [pima indians diabetes database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
 
-## 🎯 Objective
+## 🎯 Objectives
+Diabetes is often underdiagnosed until symptoms progress. The goal of this project is to identify high-risk individuals earlier through data-driven pre-screening.  
+Because missing potential cases can delay treatment, **recall** was prioritized to minimize false negatives while maintaining acceptable precision.
 
-This project aims to build a **recall-optimized and interpretable model** that can flag potentially diabetic patients early, ensuring they are directed toward further medical testing. Rather than optimizing for accuracy, this model is tailored for **screening sensitivity**—minimizing false negatives in a healthcare context.
+## 🧩 Workflow Summary
+- The modeling process began with a baseline **Logistic Regression** and an **ensemble model** without oversampling. Since recall showed little improvement (0.53 → 0.54), **SMOTE** was applied to address class imbalance.  
+- After retraining with SMOTE, recall increased to 0.73 while AUC remained stable (~0.83).  
+- Further **threshold tuning (0.5 → 0.4 → 0.35 → 0.30)** identified **0.30** as the optimal decision point — maximizing recall (0.88) and F1-score (0.71) with minimal precision loss.  
+- This final threshold balances medical sensitivity and model reliability for pre-screening use.
 
----
+## 💡 Key Results
+- The final model achieved **Recall = 0.88** and **ROC-AUC = 0.83**, showing strong sensitivity and stable discriminative power.  
+- While precision decreased slightly (0.59), this trade-off reduced false negatives to only 12% — a crucial improvement in a clinical screening context.  
+- These results demonstrate how model calibration can align machine learning with healthcare priorities.
+
+## 🩺 Explainability (SHAP Insights)
+- SHAP analysis revealed **Glucose, BMI, Age, and Insulin** as the most influential features.  
+High glucose and BMI values consistently increased diabetes probability, aligning with medical evidence.  
+- This interpretability not only enhances transparency but also validates that the model’s reasoning matches clinical logic.
+
+## 🧠 Key Takeaways & Future Work
+- I built an end-to-end classification pipeline that prioritizes recall and interpretability — key elements for healthcare AI.
+- Through this project, I learned to evaluate models beyond accuracy, focusing on decision thresholds and explainability.
+- Future improvements may include integrating more demographic data and deploying the model as a web-based screening tool.
+
+## ⚙️ Tech Stack
+Python | Pandas • NumPy • Scikit-learn | Matplotlib • Seaborn | SHAP (Explainable AI)  
+
+## 🚀 How to Run
+Clone the repository and install dependencies:
+```bash
+git clone https://github.com/Hyeri-Jerrie-Kim/supervised-learning.git
+cd diabetes-risk-prediction
+
+pip install -r requirements.txt
+```
+Run the notebook:
+```bash
+jupyter notebook notebooks/diabetes_risk_prediction.ipynb
+```
 
 ## 📊 Dataset Overview
 
-- **Source**: [Pima Indians Diabetes Dataset](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+- **Source**: [dataset](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
 - **Size**: 768 rows × 8 clinical features
 - **Target**: `Outcome` (1 = diabetic, 0 = non-diabetic)
 - **Note**: Some features (e.g., `Glucose`, `Insulin`) contain biologically implausible zeros, handled as missing values.
 
-### About the Dataset
-
-The dataset includes diagnostic data from 768 adult female Pima Indian patients.  
-It is commonly used for educational and benchmarking purposes but not representative of a general population. This model is therefore a **proof of concept** demonstrating how recall-focused and explainable modeling can work in healthcare.
-
----
-
-## 🧪 Approach Summary
-
-### 🧹 Data Preprocessing
-
-- Replaced implausible zeros using **median imputation**
-- Applied **two-sided and one-sided outlier clipping** for stable training
-
-### ⚙️ Model Development
-
-- Built a **soft voting ensemble** combining:
-  - Logistic Regression (tuned)
-  - Decision Tree (tuned)
-  - Random Forest
-  - Extra Trees
-  - SVM
-- Used **SMOTE** to balance class distributions
-- Optimized classification **threshold to 0.35** for higher recall
-
-### 🔍 Model Interpretation
-
-- Applied **SHAP** for:
-  - Global feature importance (`summary_plot`)
-  - Local patient-specific explanations (`force_plot`)
-- Compared local values (e.g., `Glucose = 130`) against global feature distributions
-
----
-
-## 📈 Results (Threshold = 0.35)
-
-| Metric        | Value |
-|---------------|--------|
-| Recall (Class 1)   | 0.85   |
-| Precision (Class 1) | 0.60   |
-| F1 Score       | 0.70   |
-| ROC AUC        | 0.84   |
-
-
-> The selected threshold balances high recall and clinical trust, minimizing missed cases of diabetes.
-
----
-
-## 🧠 Key Insights
-
-- **Glucose**, **BMI**, and **Age** are the most influential predictors, aligning with clinical intuition.
-- Model performance is **threshold-tuned**, **balanced**, and **interpretable**, supporting use in pre-screening scenarios.
-- The final Jupyter notebook explains every step from data cleaning to prediction interpretation.
-
----
-
-## 💡 Folder Structure
-```
-diabetes-risk-prediction/
-├── notebooks/ 
-│ └── diabetes_risk_prediction.ipynb
-├── data/ 
-│ └── processed/
-│ └── raw/
-│     └── pima-indians-diabetes.csv
-├── images/ 
-├── requirements.txt 
-└── README.md 
-```
----
-
-## 🚀 Future Improvements
-
-- Retrain the model on real-world, diverse population datasets
-- Integrate time-series features for longitudinal patient tracking
-- Evaluate fairness and subgroup performance (e.g., by age group)
-
----
 
 ## 📬 Contact Me
 
