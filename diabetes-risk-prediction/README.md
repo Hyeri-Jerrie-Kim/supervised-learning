@@ -10,13 +10,13 @@ Diabetes is often underdiagnosed until symptoms progress. The goal of this proje
 
 ## 🧩 Workflow Summary
 - The modeling process began with a baseline **Logistic Regression** and an **ensemble model** without oversampling. Since recall showed little improvement (0.53 → 0.54), **SMOTE** was applied to address class imbalance.  
-- After retraining with SMOTE, recall increased to 0.73 while AUC remained stable (~0.83).  
-- Further **threshold tuning (0.5 → 0.4 → 0.35 → 0.30)** identified **0.30** as the optimal decision point — maximizing recall (0.88) and F1-score (0.71) with minimal precision loss.  
+- After retraining with SMOTE, recall increased to 0.70 while AUC remained stable (~0.84).  
+- Further **threshold tuning (0.5 → 0.4 → 0.35 → 0.30)** identified **0.30** as the optimal decision point — maximizing recall (0.90) and F1-score (0.70) with minimal precision loss.  
 - This final threshold balances medical sensitivity and model reliability for pre-screening use.
 
 ## 💡 Key Results
-- The final model achieved **Recall = 0.88** and **ROC-AUC = 0.83**, showing strong sensitivity and stable discriminative power.  
-- While precision decreased slightly (0.59), this trade-off reduced false negatives to only 12% — a crucial improvement in a clinical screening context.  
+- The final model achieved **Recall = 0.90** and **ROC-AUC = 0.84**, showing strong sensitivity and stable discriminative power.  
+- While precision decreased slightly (0.57), this trade-off reduced false negatives to only 10% — a crucial improvement in a clinical screening context.  
 - These results demonstrate how model calibration can align machine learning with healthcare priorities.
 
 ## 🩺 Explainability (SHAP Insights)
@@ -36,7 +36,7 @@ Comparing feature distributions before and after percentile-based clipping shows
 ### 2. Model Performance — From Baseline to SMOTE + Threshold Tuning
 - The baseline logistic regression model showed limited sensitivity, missing several diabetic cases.  
 - After applying **SMOTE** for class balance and **threshold tuning (0.5 → 0.3)** for recall optimization,  
-the model captured **88% of diabetic patients** while maintaining an ROC-AUC around **0.83**.
+the model captured **88% of diabetic patients** while maintaining an ROC-AUC around **0.84**.
 
 | Baseline Logistic Regression | Final Model (SMOTE + Threshold 0.30) | Precision Recall Tradeoff |
 |--------------|----------------|----------------|
