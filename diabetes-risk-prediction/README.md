@@ -3,11 +3,10 @@
 ## 🏷 Project Overview
 This project predicts diabetes risk using clinical data to support early screening decisions. It reflects my growth from data analyst to data scientist — integrating model development, tuning, and explainability to extract meaningful healthcare insights.
 
-**Dataset**: [pima indians diabetes database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+**Dataset**: [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
 
 ## 🎯 Objectives
-Diabetes is often underdiagnosed until symptoms progress. The goal of this project is to identify high-risk individuals earlier through data-driven pre-screening.  
-Because missing potential cases can delay treatment, **recall** was prioritized to minimize false negatives while maintaining acceptable precision.
+Diabetes is often underdiagnosed until symptoms progress. The goal of this project is to identify high-risk individuals earlier through data-driven pre-screening. Because missing potential cases can delay treatment, **recall** was prioritized to minimize false negatives while maintaining acceptable precision.
 
 ## 🧩 Workflow Summary
 - The modeling process began with a baseline **Logistic Regression** and an **ensemble model** without oversampling. Since recall showed little improvement (0.53 → 0.54), **SMOTE** was applied to address class imbalance.  
@@ -48,4 +47,4 @@ jupyter notebook notebooks/diabetes_risk_prediction.ipynb
 
 ## 📬 Contact Me
 
-Hyeri Kim | 📧 [Email](mailto:hyeri5524@gmail.com) | 🌐 [LinkedIn](https://linkedin.com/in/hyerikim-ds)   
+Hyeri Kim — 📧 [Email](mailto:hyeri5524@gmail.com) | 🌐 [LinkedIn](https://linkedin.com/in/hyerikim-ds)   
