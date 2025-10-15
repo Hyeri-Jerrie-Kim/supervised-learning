@@ -24,6 +24,38 @@ Diabetes is often underdiagnosed until symptoms progress. The goal of this proje
 High glucose and BMI values consistently increased diabetes probability, aligning with medical evidence.  
 - This interpretability not only enhances transparency but also validates that the model’s reasoning matches clinical logic.
 
+## 🖼 Visual Highlights
+
+### 1. Outlier Handling — Before vs After Clipping
+Comparing feature distributions before and after percentile-based clipping shows how extreme values were stabilized for model robustness.
+  
+![Feature Clipping Comparison](images/feature_clipping_comparison.png)
+
+---
+
+### 2. Model Performance — From Baseline to SMOTE + Threshold Tuning
+The baseline logistic regression model showed limited sensitivity, missing several diabetic cases.  
+After applying **SMOTE** for class balance and **threshold tuning (0.5 → 0.3)** for recall optimization,  
+the model captured **88% of diabetic patients** while maintaining an ROC-AUC around **0.83**.
+
+| Model Stage | Visualization |
+|--------------|----------------|
+| Baseline Logistic Regression | ![Baseline CM](images/cm_baseline_logreg.png) |
+| Final Model (SMOTE + Threshold 0.30) | ![Final CM](images/cm_final_threshold_0_30.png) |
+
+![Precision Recall Tradeoff](images/precision_recall_tradeoff.png)
+
+---
+
+### 3. Model Explainability — SHAP Insights
+The SHAP summary highlights **Glucose**, **BMI**, and **Age** as dominant predictors of diabetes risk.  
+The waterfall plot below shows how individual features influence one patient’s prediction.
+
+| Global Importance | Local Explanation |
+|--------------------|--------------------|
+| ![SHAP Summary](images/shap_summary_plot.png) | ![Waterfall Example](images/shap_waterfall_example.png) |
+
+
 ## 🧠 Key Takeaways & Future Work
 - I built an end-to-end classification pipeline that prioritizes recall and interpretability — key elements for healthcare AI.
 - Through this project, I learned to evaluate models beyond accuracy, focusing on decision thresholds and explainability.
