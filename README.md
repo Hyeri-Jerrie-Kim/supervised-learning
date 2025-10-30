@@ -2,4 +2,7 @@
 
 ## 🔍 Projects
 
-- [🩺 Diabetes Risk Prediction](https://github.com/Hyeri-Jerrie-Kim/supervised-learning/tree/main/diabetes-risk-prediction): Machine learning pipeline optimized for recall (0.53→0.90) using SMOTE and SHAP explainability.
+- 🩺 [Diabetes Risk Prediction](#diabetes-risk-prediction)   
+  An end-to-end machine learning pipeline for early diabetes screening using SMOTE, threshold tuning, and SHAP explainability. Focused on improving recall (0.53 → 0.90) while maintaining stable ROC-AUC (0.84).
+  - 📂 [Open the full project folder](./diabetes-risk-prediction/)  
+  - 📄 [Read the detailed README](./diabetes-risk-prediction/README.md)
